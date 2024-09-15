@@ -1,65 +1,84 @@
-# RAG-Q-A-with-Groq-and-Open-LLM-models
+# RAG Formal Method Q&A with Groq and Open Source LLM Models
 
+This Streamlit app allows users to perform question and answer (Q&A) operations on research papers using various LLM models and vector embeddings. The app leverages Groq AI and Hugging Face models for processing and querying document contexts.
 
-This Streamlit application allows users to interact with research papers using various LLM (Large Language Models) and vector databases. The application leverages Groq AI for querying and integrates different embeddings and retrieval models to provide accurate answers based on provided contexts.
+## Requirements
 
-## Features
-
-- **Document Embedding**: Load and process PDF documents to create a vector database.
-- **Interactive Query**: Enter queries and receive answers based on the loaded documents.
-- **Model Selection**: Choose between different LLM models for querying.
-- **Temperature Control**: Adjust the temperature setting to control the creativity of the LLM responses.
-- **Document Similarity Search**: View similar documents related to the query.
+- Python 3.7+
+- Streamlit
+- LangChain (including `langchain_groq`, `langchain_openai`, `langchain_community`, etc.)
+- OpenAI
+- `python-dotenv` for environment variable management
 
 ## Installation
 
-1. **Clone the Repository**:
+1. **Clone the Repository:**
+
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/your-repo-url.git
+   cd your-repo-directory
    ```
 
-2. **Create and Activate a Virtual Environment**:
+2. **Create a Virtual Environment (optional but recommended):**
+
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
    ```
 
-3. **Install the Required Packages**:
+3. **Install Required Packages:**
+
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Setup Environment Variables**:
-   Create a `.env` file in the project directory and add your API keys:
-   ```
-   HF_TOKEN=your_hugging_face_api_key
+4. **Set Up Environment Variables:**
+
+   Create a `.env` file in the same directory as `app.py` with the following content:
+
+   ```env
+   HF_TOKEN=your_hugging_face_token
    GROQ_API_KEY=your_groq_api_key
    ```
 
 ## Usage
 
-1. **Run the Streamlit Application**:
+1. **Prepare Documents:**
+
+   Create a `Documents` folder in the same directory as `app.py` and place all PDF files you want to use as context for Q&A.
+
+2. **Run the Streamlit App:**
+
    ```bash
    streamlit run app.py
    ```
 
-2. **Interact with the App**:
-   - **Enter your Groq API Key and Hugging Face API Key** in the sidebar.
-   - **Upload PDF Documents** using the "Document Embedding" button.
-   - **Enter your Query** and select the LLM model from the sidebar.
-   - **Adjust Temperature** to control the response creativity.
-   - **View Responses and Document Similarities** in the app.
+3. **Interact with the App:**
 
-## Code Overview
+   - Use the sidebar to input your Groq API key and Hugging Face API key.
+   - Click on "Document Embedding" to load and process the documents.
+   - Select an LLM model from the dropdown menu and set the temperature for the model.
+   - Enter your query in the text input box and view the response.
 
-- **Sidebar Settings**: Allows users to input API keys and configure settings.
-- **Vector Embedding Creation**: Loads and processes PDF documents to create embeddings and a FAISS vector store.
-- **LLM Model Selection**: Allows selection of different LLM models and adjusts temperature for querying.
-- **Query Processing**: Uses the selected model to answer user queries based on the provided documents.
-- **Document Similarity Search**: Displays similar documents related to the user’s query.
+## Notes
 
-## Credits
+- Ensure that the paths and API keys are correctly set up in the `.env` file.
+- Adjust the paths and settings according to your local setup if needed.
+
+## Acknowledgement
 
 Special thanks to Krish Naik’s for guidance.
+
+## Troubleshooting
+
+- If no documents are loaded, verify the file path and contents in the `Documents` folder.
+- Check your API keys and ensure they are correct.
+- For any errors, refer to the error messages displayed in the app or consult the LangChain documentation for additional guidance.
+
+Feel free to contribute or open issues if you encounter any problems or have suggestions for improvements!
+
+
+
+
+
 
