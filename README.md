@@ -1,6 +1,6 @@
 # RAG: Q&A with Groq and Open Source LLM Models
 
-This Streamlit app allows users to perform question and answer (Q&A) operations on research papers using various LLM models and vector embeddings. The app leverages Groq AI and Hugging Face models for processing and querying document contexts.
+This Streamlit app allows users to perform SAT Maths question and answer (Q&A) operations using various LLM models and vector embeddings. The app leverages Groq AI, Hugging Face models and FAISS vector database for processing and querying document contexts.
 
 ## Requirements
 
