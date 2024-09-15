@@ -7,7 +7,7 @@ This Streamlit app allows users to perform question and answer (Q&A) operations 
 - Python 3.7+
 - Streamlit
 - LangChain (including `langchain_groq`, `langchain_openai`, `langchain_community`, etc.)
-- OpenAI
+- Vector Database FAISS
 - `python-dotenv` for environment variable management
 
 ## Installation
