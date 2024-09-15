@@ -15,9 +15,31 @@ import openai
 from dotenv import load_dotenv
 load_dotenv()
 
+
 # Sidebar setting
 st.sidebar.title("Settings")
-groq_api_key=st.sidebar.text_input("Enter your Groq AI API Key:",type="password")
+
+# Sidebar for API key input
+groq_api_key = st.sidebar.text_input("Enter your Groq API Key:", type="password")
+
+if groq_api_key:
+    # Initialize the LLM model
+    engine = st.sidebar.selectbox("Select LLM model", ["gemma-7b-it", "gemma2-9b-it", "Llama3-8b-8192"])
+    temperature = st.sidebar.slider("Temperature", min_value=0.0, max_value=1.0, value=0.7)
+    
+    try:
+        llm = ChatGroq(groq_api_key=groq_api_key, model_name=engine, temperature=temperature)
+        st.write("Groq client initialized successfully.")
+    except Exception as e:
+        st.write(f"Error initializing Groq client: {e}")
+else:
+    st.write("Please enter your Groq API key.")
+
+
+
+
+
+# groq_api_key=st.sidebar.text_input("Enter your Groq AI API Key:",type="password")
 os.environ["HF_TOKEN"]=st.sidebar.text_input("Enter your Hugging Face AI API Key:",type="password")
 
 # os.environ["HF_TOKEN"]=os.getenv("HF_TOKEN")
@@ -85,10 +107,6 @@ if st.sidebar.button("Document Embedding"):
     create_vector_embedding()
     st.sidebar.write("Vector Database is ready")
 ## Select the LLM model
-engine=st.sidebar.selectbox("Select LLM model",["gemma-7b-it", "gemma2-9b-it","Llama3-8b-8192","Llama3-70b-8192","mixtral-8x7b-32768"])
-temperature = st.sidebar.slider("Temperature",min_value=0.0,max_value=1.0,value=0.7)
-
-llm = ChatGroq(groq_api_key=groq_api_key, model_name = engine, temperature=temperature)
 
 
 import time
