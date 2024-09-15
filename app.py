@@ -70,7 +70,7 @@ prompt = ChatPromptTemplate.from_template(
 def create_vector_embedding():
     if "vectors" not in st.session_state:
         st.session_state.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        st.session_state.loader = PyPDFDirectoryLoader("SAT Math Book")  # Data Ingestion step
+        st.session_state.loader = PyPDFDirectoryLoader("Documents")  # Data Ingestion step
         st.session_state.docs = st.session_state.loader.load()  # Document Loading
         
         if not st.session_state.docs:
