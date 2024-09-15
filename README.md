@@ -61,5 +61,5 @@ This Streamlit application allows users to interact with research papers using v
 
 ## Credits
 
-Special thanks to Krish Naik’s for this application guidance.
+Special thanks to Krish Naik’s for guidance.
 
