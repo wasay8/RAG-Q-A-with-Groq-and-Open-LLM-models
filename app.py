@@ -84,7 +84,7 @@ user_prompt=st.text_input("Enter your query from the research paper")
 if st.sidebar.button("Document Embedding"):
     create_vector_embedding()
     st.sidebar.write("Vector Database is ready")
-## Select the OpenAI model
+## Select the LLM model
 engine=st.sidebar.selectbox("Select LLM model",["gemma-7b-it", "gemma2-9b-it","Llama3-8b-8192","Llama3-70b-8192","mixtral-8x7b-32768"])
 temperature = st.sidebar.slider("Temperature",min_value=0.0,max_value=1.0,value=0.7)
 
