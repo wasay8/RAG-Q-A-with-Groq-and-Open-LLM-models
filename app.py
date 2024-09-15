@@ -74,7 +74,7 @@ def create_vector_embedding():
 
 # Web Title
 
-st.title("RAG Formal Method Q&A with Groq and Open Source LLM models")
+st.title("RAG: Q&A with Groq and Open Source LLM models")
 
 st.text("Use different model if rate limit exhausted!!!!!")
 user_prompt=st.text_input("Enter your query from the research paper")
