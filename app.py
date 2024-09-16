@@ -102,7 +102,7 @@ def create_vector_embedding():
         st.session_state.vectors = FAISS(st.session_state.final_documents, st.session_state.embeddings) # Creating Vector database
 
 
-user_prompt=st.text_input("Enter your query as per the context.", "eg : Ask maths problem about 12th grade.")
+user_prompt=st.text_input("Enter your query as per the context.")
 
 
 ## Sidebar for settings
