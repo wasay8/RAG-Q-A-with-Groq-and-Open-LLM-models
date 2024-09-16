@@ -47,7 +47,7 @@ else:
 
 
 # groq_api_key=st.sidebar.text_input("Enter your Groq AI API Key:",type="password")
-os.environ["HF_TOKEN"]=st.sidebar.text_input("Enter your Hugging Face AI API Key:",type="password")
+os.environ["HF_TOKEN"]=st.sidebar.text_input("Enter your Hugging Face API Key:",type="password")
 
 # os.environ["HF_TOKEN"]=os.getenv("HF_TOKEN")
 # os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
