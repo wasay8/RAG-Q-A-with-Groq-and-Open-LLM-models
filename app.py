@@ -18,7 +18,7 @@ load_dotenv()
 
 # Web Title
 
-st.title("RAG: Q&A with Groq and Open Source LLM models")
+st.title("RAG: Maths Q&A with Groq and Open Source LLM models")
 
 st.text("Use different model if rate limit exhausts!!!!!")
 st.text("Document Embeddings take some times")
